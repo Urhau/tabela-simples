@@ -1,41 +1,74 @@
-# tabela-simples
-from tkinter import Canvas
-from tkinter import *
+# tabela simples
+import pygame
+from pygame.locals import *
+from sys import exit
+
+pygame.init()
+
+largura = 700
+altura = 500
 
 
-janela =Tk()
-janela.title("Football Field")
-janela.geometry("800x600")
+tela = pygame.display.set_mode ((largura,altura))
+pygame.display.set_caption('Campo de futebol')
 
-# Colors
+while True:
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            exit()
+    pygame.draw.line(tela, (0,170,0), (500,0), (500,600),1000)
 
-cor1 = "#0cba0b" # light green
-cor2 = "078a06" # draw green
-cor3 = "#ffffff" #white
+    pygame.draw.line(tela, (0,100,0), (100,0), (100,600),95)
+    pygame.draw.line(tela, (0,100,0), (250,0), (250,600),95)
+    pygame.draw.line(tela, (0,100,0), (450,0), (450,600),95)
+    pygame.draw.line(tela, (0,100,0), (600,0), (600,600),95)
+
+    pygame.draw.line(tela, (255,255,255), (350,0), (350,510),5)
+
+    pygame.draw.line(tela, (255,255,255), (0,350), (100,350),5)
+    pygame.draw.line(tela, (255,255,255), (0,150), (100,150),5)
+    pygame.draw.line(tela, (255,255,255), (100,350), (100,150),5)
+
+    pygame.draw.line(tela, (255,255,255), (800,350), (600,350),5)
+    pygame.draw.line(tela, (255,255,255), (800,150), (600,150),5)
+    pygame.draw.line(tela, (255,255,255), (600,350), (600,150),5)
+
+    pygame.draw.line(tela, (255,255,255), (0,185), (50,185),5)
+    pygame.draw.line(tela, (255,255,255), (0,317), (50,317),5)
+    pygame.draw.line(tela, (255,255,255), (50,185), (50,317),5)
+
+    pygame.draw.line(tela, (255,255,255), (700,185), (650,185),5)
+    pygame.draw.line(tela, (255,255,255), (700,317), (650,317),5)
+    pygame.draw.line(tela, (255,255,255), (650,185), (650,317),5)
+
+    pygame.draw.circle(tela, (255,255,255), (350,250), 20)
+    pygame.draw.circle(tela, (255,255,255), (70,250), 10)      
+    pygame.draw.circle(tela, (255,255,255), (630,250), 10)
+
+    pygame.draw.arc(tela, (255, 255, 255), (250, 150, 200, 200), 10, 20, 5) 
+
+    pygame.draw.arc(tela, (255, 255, 255), (-40, -40, 80, 80), 10, 20, 5) #esquerdo cima
+
+    pygame.draw.arc(tela, (255, 255, 255), (-40, 460, 80, 80), 10, 20, 5) # esquerdo baixo
+
+    pygame.draw.arc(tela, (255, 255, 255), (665, 455, 80, 80), 10, 20, 5) #direito baixo
+
+    pygame.draw.arc(tela, (255, 255, 255), (665, -40, 80, 80), 10, 20, 5) #direito cima
+
+    
+
+    
+
+    
+                                                 
 
 
-# creating arccreate_line
 
-canvasScreen = Canvas(janela, width= 700, height=500, bg=cor1)
-canvasScreen.pack(pady = 80)
-canvasScreen.create_line(350, 0, 350, 510, fill= "white")
 
-canvasScreen.create_line(0, 350, 100, 350, fill= "white")
-canvasScreen.create_line(0, 150, 100, 150, fill= "white")
-canvasScreen.create_line(100, 350, 100, 150, fill= "white")
 
-canvasScreen.create_line(800, 350, 600, 350, fill= "white")
-canvasScreen.create_line(800, 150, 600, 150, fill= "white")
-canvasScreen.create_line(600, 350, 600, 150, fill= "white")
 
-canvasScreen.create_line(0, 185, 50, 185, fill= "white")
-canvasScreen.create_line(0, 317, 50, 317, fill= "white")
-canvasScreen.create_line(50, 185, 50, 317, fill= "white")
-
-canvasScreen.create_line(700, 185, 650, 185, fill= "white")
-canvasScreen.create_line(700, 317, 650, 317, fill= "white")
-canvasScreen.create_line(650, 185, 650, 317, fill= "white")
-canvasScreen.create_arc(500, 400, 400, 200, fill= "white")
+    pygame.display.update()
 
 
 
